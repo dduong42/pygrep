@@ -11,6 +11,7 @@ setup(
     entry_points={
         'console_scripts': [
             'grepfunc = pygrep:grepfunc',
+            'grepclass = pygrep:grepclass',
         ],
     }
 )

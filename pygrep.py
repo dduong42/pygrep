@@ -31,6 +31,22 @@ def grepfunc():
             print(output)
 
 
+def grepclass():
+    query = sys.argv[1]
+    path = sys.argv[2]
+    with parse_source(path) as code:
+        nodes = code.find_class(query)
+        output = []
+        for node in nodes:
+            output.append('{}:{}'.format(
+                bold(node.lineno),
+                code.get_line(node.lineno),
+            ))
+        output = '\n'.join(output)
+        if output:
+            print(output)
+
+
 class CodeSource(object):
     def __init__(self, content):
         self.node = ast.parse(content)
