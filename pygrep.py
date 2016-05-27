@@ -7,7 +7,7 @@ import sys
 def parse_source(path):
     with open(path) as f:
         content = f.read()
-        yield CodeSource(content)
+        yield SourceCode(content)
 
 
 def bold(s):
@@ -47,7 +47,7 @@ def grepclass():
             print(output)
 
 
-class CodeSource(object):
+class SourceCode(object):
     def __init__(self, content):
         self.node = ast.parse(content)
         self.lines = content.split('\n')
