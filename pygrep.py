@@ -11,7 +11,7 @@ def parse_source(path):
 
 
 def bold(s):
-    s = str(s)
+    s = '\033[1m' + str(s) + '\033[0m'
     return s
 
 
